@@ -1,0 +1,82 @@
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Student Sign_Up
+        </title>
+        <link rel="stylesheet" type="text/css"
+              href="clogin1.css">
+              <script  src="upsign.js">
+                
+            </script>
+            <div style="padding-right: 10px;">
+    <h1 class="lg11">Welcome IN Student Sign-up</h1>
+</div>
+    </head>
+
+    <body>
+
+    <div id="f2" class="popback"> 
+       <form  method="post" class="fmod anima" style="margin-top: 19%;"  action="s_signup.php" onsubmit="return signup()" enctype="multipart/form-data">
+           <div class="imag">
+               
+               <img id="uploadPreview"  src='prof.png' class="pict"/>
+               <input type="file" name="file_image" id="uploadImage" title="Profile img" style="width:auto;"accept=".jpeg,.jpg,.png"class="file1" value="" onchange="PreviewImage();"><br/>
+               <span onclick="location.href='login1.html'" class="close" >&times;</span>
+           </div>
+
+           <div class="div2">
+            <label for="t1" class="txet" >User Name </label><br/>
+            <input type="text" id="text1" placeholder="user_id" value="" onpaste="return false" name="t1" title="Atleast 8 character" oninput="chng()" required disabled><br/>
+            <label for="t2" class="txet" >Password</label><br/>
+            <input type="text" id="passw" name="password" value="" placeholder="Password" title="1)Atleast 8 character&#10;2)Atleast one Number&#10;3)Atleast one uppercase character&#10;4)Atleast one lowercase character&#10;4)Atleast one special character" oninput="enbe('passw','rpassw',passformat)" required disabled/>
+            <span id="error1" style="color:red;"></span>
+            <span id="suc1" style="color:green;"></span><br/><br/>
+            <label for="t2" class="txet" >Retype Password : </label><br/>
+            <input type="password" id="rpassw" value="" placeholder="Retype Password" onmousedown="final()" onmouseup="final()" oninput="final()" required disabled/>
+            <span id="error2" style="color:red;"></span>
+            <span id="suc2" style="color:green;"></span><br/><br/>
+            </div>
+           <div class="div2">
+            <input type="submit" id="sup" class="bttn1" name="submit" value="signup"  disabled>
+            <input type="reset" class="bttn2" name="reset" value="reset" onclick="re_set()">
+            <input type="button" class="bttn2" name="cancel" value="cancel" onclick="location.href='login1.html'" >
+           </div>
+
+           </div>
+           
+           
+           </form>
+    </div> 
+<script>
+
+    window.onload=load();
+
+    function PreviewImage() {
+        const read=document.querySelector('input[type=file]').files[0];
+        const image=document.querySelector('img');
+        const freader=new FileReader();
+        if(read)
+        {
+            freader.readAsDataURL(read);
+            if(document.getElementById('uploadImage').value!="")
+             {
+                document.getElementById('text1').disabled=false;
+             }
+            else
+             {
+                document.getElementById('text1').disabled=true;
+             }
+        }
+        freader.addEventListener("load",function(){
+            image.src=freader.result;
+
+        },false);
+        
+    }
+    
+</script>
+
+</body>
+</html>

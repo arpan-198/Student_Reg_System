@@ -1,0 +1,107 @@
+<html>
+<head>
+        <title>Student Of Kolkata</title>
+        <link rel="stylesheet" type="text/css"
+              href="login1.css">
+              <script  src="jssignup.js">
+            </script>
+    <h1 class="lg11">Welcome IN Student Portal</h1>
+    <div><center><img class="stpic"  src="stpic.jpg" alt="Students"></center></div><br/>
+        <script>
+                function login()
+                {
+                      var l=f1.t1.value.length;
+                      
+                      var st=f1.t1.value;
+                      var U=0,S=0,sp=0,N=0,U1=0,S1=0,sp1=0,N1=0;
+                      if(l<8 || l>16 )
+                      {
+                          alert("user name must be between 8-16 character.")
+                      }
+                      for(var i=0;i<l;i++)
+                      {
+                          if(st.charAt(i)>='a' && st.charAt(i)<='z')
+                          S++;
+                          else if(st.charAt(i)>='A' && st.charAt(i)<='Z')
+                          U++;
+                          else if(st.charAt(i)>='0' && st.charAt(i)<='9')
+                          N++;
+                          else if(st.charAt(i)>='_')
+                          sp++;
+
+                      }
+                      if(f1.t2.value.length)
+                      {
+                      st=f1.t2.value;
+                      for(var i=0;i<l;i++)
+                      {
+                          if(st.charAt(i)>='a' && st.charAt(i)<='z')
+                          S1++;
+                          else if(st.charAt(i)>='A' && st.charAt(i)<='Z')
+                          U1++;
+                          else if(st.charAt(i)>='0' && st.charAt(i)<='9')
+                          N1++;
+                          else if(st.charAt(i)>='@')
+                          sp1++;
+
+                      }
+                      
+
+                      if(S>0 && U>0 && N>0 && sp>0 && S1>0 && U1>0 && N1>0 && sp1>0)
+                      alert("OK");
+                      else
+                      alert("Enter correct format");
+                      }
+                      else
+                      alert("Password is OPtional");
+
+                }
+
+                function signup()
+                {
+                    window.open("signup.html","_blank");
+                }
+        </script>
+</head>
+<body>
+        <input type="button" class="lin" value="Click Me" name="click_me" onclick="document.getElementById('f1').style.display='block'">
+
+    <div id="f1" class="popback"> 
+       <form  method="post" class="fmod anima">
+           <div class="imag">
+               <img src="pic1.jpeg" alt="picture" class="pict">
+               <span onclick="document.getElementById('f1').style.display='none'" class="close" >&times;</span>
+           </div>
+
+           <div class="div2">
+            <label for="t1" class="txet" >User Name </label><br/>
+            <input type="text" placeholder="user_id" value="" name="t1" required><br/>
+            <label for="t2" class="txet" >Password</label><br/>
+            <input type="password" placeholder="Pass_Word" value="" name="t2" required><br/>
+            </div>
+           <div class="div2">
+            <input type="button" class="bttn1" value="login" name="log" onclick="login()">
+            <input type="reset" class="bttn2" name="reset" value="reset">
+           </div>
+           
+           <div class="div3">
+            <span class="hyp" ><a href="signin.html"> new user?</a>
+                forget <a href="test.php">password</a> 
+            </span>
+            <!--<input type="button"  value="signup" name="siup" onclick="signup()">-->
+
+           </div>
+           
+           
+           </form>
+    </div> 
+<script>
+    window.onclick=function(event){
+          if(event.target==document.getElementById('f1'))
+          document.getElementById('f1').style.display='none';
+
+    }
+</script>
+
+</body>
+</html>
