@@ -1,0 +1,61 @@
+.pg11{
+    height: 50px;
+            overflow: visible;
+
+            color: black;
+            text-align:center;
+            font-family:sans-serif;
+            font-size:50px;
+            background-color:skyblue;
+            border:1px solid;
+            border-color: black;
+            border-width: 70%;
+            border-radius: 50px 25px;
+            padding: 1%;
+}
+
+
+.pic{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.b1{
+    position: absolute;
+    left: 15%;
+    background-color:black;
+    color: cornsilk;
+    width: 150px;
+    height: 50px;
+}
+
+.b2{
+    position: absolute;
+    right: 15%;
+    background-color:black;
+    color: cornsilk;
+    width: 150px;
+    height: 50px;
+}
+
+.f{
+    box-sizing: border-box;
+    border: 1px solid blanchedalmond;
+    padding: 5px;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(204, 143, 143, 0.4);
+}
+
+
+
